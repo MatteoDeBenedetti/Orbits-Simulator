@@ -12,16 +12,12 @@ public class UIManager : MonoBehaviour
     [SerializeField] Text apoapsisText;
     [SerializeField] Text periapsisText;
 
-
-    // cached references
-    //GameSession gameSession;
-
     float timeSec;
 
     void Start () 
 	{
-        //gameSession = FindObjectOfType<GameSession>();
-	}
+
+    }
 	
 	void Update () 
 	{
@@ -30,7 +26,7 @@ public class UIManager : MonoBehaviour
 
     public void UpdateTimeWarpText(string timeWarp)
     {
-        timeWarpText.text = timeWarp; // gameSession.GetTimeWarp().ToString();
+        timeWarpText.text = timeWarp + "x"; 
     }
 
     public void UpdateMissionTimeText(float timeSec)

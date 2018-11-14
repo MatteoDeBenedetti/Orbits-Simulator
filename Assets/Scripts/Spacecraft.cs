@@ -112,8 +112,6 @@ public class Spacecraft : MonoBehaviour
             i++;
         } while (Mathf.Abs(newE - oldE) > tol || i > 10);
 
-        //Debug.Log(i);
-
         return newE;
     }
 

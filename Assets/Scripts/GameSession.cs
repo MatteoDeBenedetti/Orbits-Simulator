@@ -24,8 +24,6 @@ public class GameSession : MonoBehaviour
     void Update () 
 	{
         Time.timeScale = timeWarp;
-        //TUFromPeriapsis += Time.deltaTime / TU2sec;
-        //timeFromPeriapsis += Time.deltaTime;
 
         UIManagerRef.UpdateMissionTimeText(Time.timeSinceLevelLoad);
     }
