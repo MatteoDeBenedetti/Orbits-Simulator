@@ -1,10 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
-public class GameSession : MonoBehaviour 
+public class GameSession : MonoBehaviour
 {
     [SerializeField] [Range(1, 100)] float timeWarp = 1;
+    [SerializeField] Slider EccentricitySlider;
+    [SerializeField] Slider SmaSlider;
+    [SerializeField] Canvas canvas;
 
     UIManager UIManagerRef;
 
@@ -47,5 +52,13 @@ public class GameSession : MonoBehaviour
     {
         timeWarp = timeWarpValues[(int)value];
         UIManagerRef.UpdateTimeWarpText(timeWarp.ToString());
+    }
+
+    public void UpdateOrbitalParams()
+    {
+        //DontDestroyOnLoad(canvas);
+        //SceneManager.LoadScene("Simulator");
+
+
     }
 }

@@ -7,11 +7,13 @@ using UnityEngine.UI;
 
 public class Spacecraft : MonoBehaviour
 {
-    [SerializeField] float e;
-    [SerializeField] float a;
+    //[SerializeField] float e;
+    //[SerializeField] float a;
     [SerializeField] Transform primaryTransform;
     [SerializeField] Text apoapsisText;
     [SerializeField] Text periapsisText;
+    [SerializeField] Slider EccentricitySlider;
+    [SerializeField] Slider SmaSlider;
 
     // states
     float trueAnomaly; // in rad
@@ -19,6 +21,8 @@ public class Spacecraft : MonoBehaviour
     float rPeriapsis;
     float rApoapsis;
     float p;
+    float a;
+    float e;
 
     // constants
     float muEarth = 398600; // km2/s2 
@@ -43,6 +47,8 @@ public class Spacecraft : MonoBehaviour
 
         // init states
         trueAnomaly = 0f;
+        a = SmaSlider.value;
+        e = EccentricitySlider.value;
         p = a * (1 - e * e);
         rPeriapsis = a * (1 - e);
         rApoapsis = a * (1 + e);
@@ -56,6 +62,9 @@ public class Spacecraft : MonoBehaviour
     void Update()
     {
         // update states
+        p = a * (1 - e * e);
+        rPeriapsis = a * (1 - e);
+        rApoapsis = a * (1 + e);
         UpdateTrueAnomaly();
         UpdateSpacecraftPos();
         UpdateOrbitTray();
@@ -63,6 +72,8 @@ public class Spacecraft : MonoBehaviour
         // update GUI
         UIManagerRef.UpdateApoapsisText(rApoapsis - radiusEarth);
         UIManagerRef.UpdatePeriapsisText(rPeriapsis - radiusEarth);
+        UIManagerRef.UpdateSmaText(a);
+        UIManagerRef.UpdateEccentricityText(e);
     }
 
     private void UpdateSpacecraftPos()
@@ -173,5 +184,22 @@ public class Spacecraft : MonoBehaviour
         }
 
         return orbitPosArray;
+    }
+
+    public void UpdateSmaSlider(float value)
+    {
+        a = value;
+        UpdateOrbitalParams();
+    }
+
+    public void UpdateEccentricitySlider(float value)
+    {
+        e = value;
+        UpdateOrbitalParams();
+    }
+
+    public void UpdateOrbitalParams()
+    {
+
     }
 }

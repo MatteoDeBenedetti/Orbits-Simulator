@@ -11,6 +11,8 @@ public class UIManager : MonoBehaviour
     [SerializeField] Text missionTypeText;
     [SerializeField] Text apoapsisText;
     [SerializeField] Text periapsisText;
+    [SerializeField] Text smaText;
+    [SerializeField] Text eccentricityText;
 
     float timeSec;
 
@@ -44,5 +46,15 @@ public class UIManager : MonoBehaviour
     public void UpdatePeriapsisText(float rPeri)
     {
         periapsisText.text = "Periapsis: " + rPeri.ToString() + " km";
+    }
+
+    public void UpdateSmaText(float a)
+    {
+        smaText.text = "Semi Major Axis: " + a.ToString() + " km";
+    }
+
+    public void UpdateEccentricityText(float e)
+    {
+        eccentricityText.text = "Eccentricity: " + e.ToString();
     }
 }
