@@ -4,7 +4,12 @@
 [Bb]uild/
 [Bb]uilds/
 Assets/AssetStoreTools*
+<<<<<<< HEAD
  
+=======
+Library/
+
+>>>>>>> parent of 8cb7938... updated unity files
 # Visual Studio cache directory
 .vs/
 

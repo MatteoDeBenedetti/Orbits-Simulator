@@ -15,12 +15,16 @@ MonoBehaviour:
     serializedVersion: 2
     x: 1
     y: 51
+<<<<<<< HEAD
     width: 1777
+=======
+    width: 1726
+>>>>>>> parent of 8cb7938... updated unity files
     height: 988
   m_ShowMode: 4
   m_Title: 
   m_RootView: {fileID: 2}
-  m_MinSize: {x: 950, y: 542}
+  m_MinSize: {x: 950, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &2
 MonoBehaviour:
@@ -41,9 +45,13 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
+<<<<<<< HEAD
     width: 1777
+=======
+    width: 1726
+>>>>>>> parent of 8cb7938... updated unity files
     height: 988
-  m_MinSize: {x: 950, y: 542}
+  m_MinSize: {x: 950, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &3
 MonoBehaviour:
@@ -61,7 +69,11 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
+<<<<<<< HEAD
     width: 1777
+=======
+    width: 1726
+>>>>>>> parent of 8cb7938... updated unity files
     height: 30
   m_MinSize: {x: 0, y: 0}
   m_MaxSize: {x: 0, y: 0}
@@ -82,7 +94,11 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 968
+<<<<<<< HEAD
     width: 1777
+=======
+    width: 1726
+>>>>>>> parent of 8cb7938... updated unity files
     height: 20
   m_MinSize: {x: 0, y: 0}
   m_MaxSize: {x: 0, y: 0}
@@ -104,12 +120,20 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 30
+<<<<<<< HEAD
     width: 1777
+=======
+    width: 1726
+>>>>>>> parent of 8cb7938... updated unity files
     height: 938
   m_MinSize: {x: 681, y: 492}
   m_MaxSize: {x: 14004, y: 14042}
   vertical: 0
+<<<<<<< HEAD
   controlID: 39
+=======
+  controlID: 46
+>>>>>>> parent of 8cb7938... updated unity files
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -128,12 +152,20 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
+<<<<<<< HEAD
     width: 1267
+=======
+    width: 1230
+>>>>>>> parent of 8cb7938... updated unity files
     height: 938
   m_MinSize: {x: 404, y: 492}
   m_MaxSize: {x: 10002, y: 14042}
   vertical: 1
+<<<<<<< HEAD
   controlID: 40
+=======
+  controlID: 47
+>>>>>>> parent of 8cb7938... updated unity files
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -152,12 +184,20 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
+<<<<<<< HEAD
     width: 1267
+=======
+    width: 1230
+>>>>>>> parent of 8cb7938... updated unity files
     height: 568
   m_MinSize: {x: 404, y: 221}
   m_MaxSize: {x: 8004, y: 4021}
   vertical: 0
+<<<<<<< HEAD
   controlID: 41
+=======
+  controlID: 48
+>>>>>>> parent of 8cb7938... updated unity files
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -174,7 +214,11 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
+<<<<<<< HEAD
     width: 378
+=======
+    width: 365
+>>>>>>> parent of 8cb7938... updated unity files
     height: 568
   m_MinSize: {x: 200, y: 200}
   m_MaxSize: {x: 4000, y: 4000}
@@ -197,19 +241,25 @@ MonoBehaviour:
   m_Children: []
   m_Position:
     serializedVersion: 2
+<<<<<<< HEAD
     x: 378
     y: 0
     width: 889
+=======
+    x: 365
+    y: 0
+    width: 865
+>>>>>>> parent of 8cb7938... updated unity files
     height: 568
   m_MinSize: {x: 204, y: 221}
   m_MaxSize: {x: 4004, y: 4021}
-  m_ActualView: {fileID: 14}
+  m_ActualView: {fileID: 12}
   m_Panes:
   - {fileID: 14}
   - {fileID: 12}
   - {fileID: 15}
-  m_Selected: 0
-  m_LastSelected: 1
+  m_Selected: 1
+  m_LastSelected: 0
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -226,7 +276,11 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 568
+<<<<<<< HEAD
     width: 1267
+=======
+    width: 1230
+>>>>>>> parent of 8cb7938... updated unity files
     height: 370
   m_MinSize: {x: 232, y: 271}
   m_MaxSize: {x: 10002, y: 10021}
@@ -250,12 +304,18 @@ MonoBehaviour:
   m_Children: []
   m_Position:
     serializedVersion: 2
+<<<<<<< HEAD
     x: 1267
     y: 0
     width: 510
+=======
+    x: 1230
+    y: 0
+    width: 496
+>>>>>>> parent of 8cb7938... updated unity files
     height: 938
-  m_MinSize: {x: 277, y: 71}
-  m_MaxSize: {x: 4002, y: 4021}
+  m_MinSize: {x: 275, y: 50}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 18}
   m_Panes:
   - {fileID: 18}
@@ -281,10 +341,17 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
+<<<<<<< HEAD
     x: 387
     y: 100
     width: 881
     height: 543
+=======
+    x: 368
+    y: 100
+    width: 861
+    height: 547
+>>>>>>> parent of 8cb7938... updated unity files
   m_PersistentViewDataDictionary: {fileID: 0}
   m_MaximizeOnPlay: 0
   m_Gizmos: 0
@@ -317,10 +384,17 @@ MonoBehaviour:
       serializedVersion: 2
       x: 0
       y: 17
+<<<<<<< HEAD
       width: 881
       height: 526
     m_Scale: {x: 0.45885417, y: 0.45885417}
     m_Translation: {x: 440.5, y: 263}
+=======
+      width: 861
+      height: 530
+    m_Scale: {x: 0.4484375, y: 0.4484375}
+    m_Translation: {x: 430.5, y: 265}
+>>>>>>> parent of 8cb7938... updated unity files
     m_MarginLeft: 0
     m_MarginRight: 0
     m_MarginTop: 0
@@ -328,14 +402,24 @@ MonoBehaviour:
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
       x: -960
+<<<<<<< HEAD
       y: -573.1669
       width: 1920
       height: 1146.3337
+=======
+      y: -590.94073
+      width: 1920
+      height: 1181.8815
+>>>>>>> parent of 8cb7938... updated unity files
     m_MinimalGUI: 1
-  m_defaultScale: 0.45885417
+  m_defaultScale: 0.4484375
   m_TargetTexture: {fileID: 0}
   m_CurrentColorSpace: 0
+<<<<<<< HEAD
   m_LastWindowPixelSize: {x: 881, y: 543}
+=======
+  m_LastWindowPixelSize: {x: 861, y: 547}
+>>>>>>> parent of 8cb7938... updated unity files
   m_ClearInEditMode: 1
   m_NoCameraWarning: 1
   m_LowResolutionForAspectRatios: 01000000000100000100
@@ -362,14 +446,24 @@ MonoBehaviour:
     serializedVersion: 2
     x: 1
     y: 100
+<<<<<<< HEAD
     width: 376
+=======
+    width: 363
+>>>>>>> parent of 8cb7938... updated unity files
     height: 547
   m_PersistentViewDataDictionary: {fileID: 0}
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
+<<<<<<< HEAD
     m_SelectedIDs: 
     m_LastClickedID: 0
     m_ExpandedIDs: defbffff00000000
+=======
+    m_SelectedIDs: cef9ffff
+    m_LastClickedID: -1586
+    m_ExpandedIDs: 8efaffff00000000
+>>>>>>> parent of 8cb7938... updated unity files
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -413,9 +507,15 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
+<<<<<<< HEAD
     x: 381
     y: 100
     width: 885
+=======
+    x: 368
+    y: 100
+    width: 861
+>>>>>>> parent of 8cb7938... updated unity files
     height: 547
   m_PersistentViewDataDictionary: {fileID: 0}
   m_SceneLighting: 1
@@ -519,7 +619,11 @@ MonoBehaviour:
     serializedVersion: 2
     x: 1
     y: 668
+<<<<<<< HEAD
     width: 1265
+=======
+    width: 1228
+>>>>>>> parent of 8cb7938... updated unity files
     height: 349
   m_PersistentViewDataDictionary: {fileID: 0}
   m_SearchFilter:
@@ -545,9 +649,15 @@ MonoBehaviour:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
+<<<<<<< HEAD
     m_SelectedIDs: 840b0000
     m_LastClickedID: 2948
     m_ExpandedIDs: 000000009009000000ca9a3b
+=======
+    m_SelectedIDs: 342d0000
+    m_LastClickedID: 11572
+    m_ExpandedIDs: 000000005a2b000000ca9a3b
+>>>>>>> parent of 8cb7938... updated unity files
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -575,7 +685,11 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
+<<<<<<< HEAD
     m_ExpandedIDs: 0000000090090000
+=======
+    m_ExpandedIDs: 000000005a2b0000
+>>>>>>> parent of 8cb7938... updated unity files
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -675,9 +789,15 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
+<<<<<<< HEAD
     x: 1270
     y: 100
     width: 508
+=======
+    x: 1233
+    y: 100
+    width: 494
+>>>>>>> parent of 8cb7938... updated unity files
     height: 917
   m_PersistentViewDataDictionary: {fileID: 0}
   m_ObjectsLockedBeforeSerialization: []
