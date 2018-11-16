@@ -7,11 +7,13 @@ using UnityEngine.UI;
 
 public class Spacecraft : MonoBehaviour
 {
-    [SerializeField] float e;
-    [SerializeField] float a;
+    //[SerializeField] float e;
+    //[SerializeField] float a;
     [SerializeField] Transform primaryTransform;
     [SerializeField] Text apoapsisText;
     [SerializeField] Text periapsisText;
+    [SerializeField] Slider EccentricitySlider;
+    [SerializeField] Slider SmaSlider;
 
     // states
     float trueAnomaly; // in rad
@@ -19,6 +21,8 @@ public class Spacecraft : MonoBehaviour
     float rPeriapsis;
     float rApoapsis;
     float p;
+    float a;
+    float e;
 
     // constants
     float muEarth = 398600; // km2/s2 
@@ -43,6 +47,8 @@ public class Spacecraft : MonoBehaviour
 
         // init states
         trueAnomaly = 0f;
+        a = SmaSlider.value;
+        e = EccentricitySlider.value;
         p = a * (1 - e * e);
         rPeriapsis = a * (1 - e);
         rApoapsis = a * (1 + e);
@@ -55,33 +61,38 @@ public class Spacecraft : MonoBehaviour
 
     void Update()
     {
-        // update states
+        // update spacecraft states
+        p = a * (1 - e * e);
+        rPeriapsis = a * (1 - e);
+        rApoapsis = a * (1 + e);
         UpdateTrueAnomaly();
         UpdateSpacecraftPos();
         UpdateOrbitTray();
 
+        // update primary position
+        primaryTransform.position = new Vector2(e * a * km2units, 0);
+
         // update GUI
         UIManagerRef.UpdateApoapsisText(rApoapsis - radiusEarth);
         UIManagerRef.UpdatePeriapsisText(rPeriapsis - radiusEarth);
+        UIManagerRef.UpdateSmaText(a);
+        UIManagerRef.UpdateEccentricityText(e);
     }
 
     private void UpdateSpacecraftPos()
     {
         float rScalar = p / (1 + e * Mathf.Cos(trueAnomaly));
 
-        rVect[0] = rScalar * Mathf.Cos(trueAnomaly);
+        rVect[0] = rScalar * Mathf.Cos(trueAnomaly) + e * a;
         rVect[1] = rScalar * Mathf.Sin(trueAnomaly);
 
-        gameObject.transform.position = new Vector2(rVect[0] * km2units, rVect[1] * km2units);
+        transform.position = new Vector2(rVect[0] * km2units, rVect[1] * km2units);
     }
 
     private void UpdateTrueAnomaly()
     {
-        // circular case
-        // TODO
-
-        // elliptic case
-        if (e > 0 && e < 1)
+        // circular and elliptic case
+        if (e >= 0 && e < 1)
         {
             float ellipticalEccentricAnomaly = SolveEllipticInverseKeplerProblem();
             trueAnomaly = E2ni(ellipticalEccentricAnomaly);
@@ -94,7 +105,7 @@ public class Spacecraft : MonoBehaviour
         // TODO
     }
 
-    // consider deltaT = time from start of everything
+    // consider deltaT = time from start
     private float SolveEllipticInverseKeplerProblem()
     {
         float newE, oldE, M;
@@ -113,30 +124,6 @@ public class Spacecraft : MonoBehaviour
         } while (Mathf.Abs(newE - oldE) > tol || i > 10);
 
         return newE;
-    }
-
-    // consider deltaT = time of frame
-    private float SolveEllipticInverseKeplerProblem2()
-    {
-        float newE2, oldE2, E1, M;
-        float tol = 0.001f;
-
-        E1 = ni2E(trueAnomaly);
-        M = Mathf.Sqrt(muEarth / Mathf.Pow(a, 3)) * Time.deltaTime - e * Mathf.Sin(E1) + E1;
-        newE2 = M;
-        int i = 0;
-
-        do
-        {
-            oldE2 = newE2;
-            newE2 = oldE2 + (M - oldE2 + e * Mathf.Sin(oldE2)) / (1 - e * Mathf.Cos(oldE2));
-
-            i++;
-        } while (Mathf.Abs(newE2 - oldE2) > tol || i > 10);
-
-        Debug.Log(i);
-
-        return newE2;
     }
 
     private float ni2E(float ni)
@@ -167,11 +154,28 @@ public class Spacecraft : MonoBehaviour
         {
             ni = i * 2*Mathf.PI / res;
             orbitPosArray[i] = new Vector3(
-                ((p) / (1 + e * Mathf.Cos(ni))) * Mathf.Cos(ni) * km2units,
+                (((p) / (1 + e * Mathf.Cos(ni))) * Mathf.Cos(ni) + e*a) * km2units,
                 ((p) / (1 + e * Mathf.Cos(ni))) * Mathf.Sin(ni) * km2units,
                 0);
         }
 
         return orbitPosArray;
+    }
+
+    public void UpdateSmaSlider(float value)
+    {
+        a = value;
+        UpdateOrbitalParams();
+    }
+
+    public void UpdateEccentricitySlider(float value)
+    {
+        e = value;
+        UpdateOrbitalParams();
+    }
+
+    public void UpdateOrbitalParams()
+    {
+
     }
 }
