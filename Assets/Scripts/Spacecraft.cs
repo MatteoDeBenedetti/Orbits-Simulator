@@ -94,11 +94,8 @@ public class Spacecraft : MonoBehaviour
 
     private void UpdateTrueAnomaly()
     {
-        // circular case
-        // TODO
-
-        // elliptic case
-        if (e > 0 && e < 1)
+        // circular and elliptic case
+        if (e >= 0 && e < 1)
         {
             float ellipticalEccentricAnomaly = SolveEllipticInverseKeplerProblem();
             trueAnomaly = E2ni(ellipticalEccentricAnomaly);
