@@ -72,9 +72,6 @@ public class Spacecraft : MonoBehaviour
         // update primary position
         primaryTransform.position = new Vector2(e * a * km2units, 0);
 
-        // align camera to primary pos
-
-
         // update GUI
         UIManagerRef.UpdateApoapsisText(rApoapsis - radiusEarth);
         UIManagerRef.UpdatePeriapsisText(rPeriapsis - radiusEarth);
@@ -86,7 +83,7 @@ public class Spacecraft : MonoBehaviour
     {
         float rScalar = p / (1 + e * Mathf.Cos(trueAnomaly));
 
-        rVect[0] = rScalar * Mathf.Cos(trueAnomaly);
+        rVect[0] = rScalar * Mathf.Cos(trueAnomaly) + e * a;
         rVect[1] = rScalar * Mathf.Sin(trueAnomaly);
 
         transform.position = new Vector2(rVect[0] * km2units, rVect[1] * km2units);
@@ -108,7 +105,7 @@ public class Spacecraft : MonoBehaviour
         // TODO
     }
 
-    // consider deltaT = time from start of everything
+    // consider deltaT = time from start
     private float SolveEllipticInverseKeplerProblem()
     {
         float newE, oldE, M;
@@ -127,30 +124,6 @@ public class Spacecraft : MonoBehaviour
         } while (Mathf.Abs(newE - oldE) > tol || i > 10);
 
         return newE;
-    }
-
-    // consider deltaT = time of frame
-    private float SolveEllipticInverseKeplerProblem2()
-    {
-        float newE2, oldE2, E1, M;
-        float tol = 0.001f;
-
-        E1 = ni2E(trueAnomaly);
-        M = Mathf.Sqrt(muEarth / Mathf.Pow(a, 3)) * Time.deltaTime - e * Mathf.Sin(E1) + E1;
-        newE2 = M;
-        int i = 0;
-
-        do
-        {
-            oldE2 = newE2;
-            newE2 = oldE2 + (M - oldE2 + e * Mathf.Sin(oldE2)) / (1 - e * Mathf.Cos(oldE2));
-
-            i++;
-        } while (Mathf.Abs(newE2 - oldE2) > tol || i > 10);
-
-        Debug.Log(i);
-
-        return newE2;
     }
 
     private float ni2E(float ni)
@@ -181,7 +154,7 @@ public class Spacecraft : MonoBehaviour
         {
             ni = i * 2*Mathf.PI / res;
             orbitPosArray[i] = new Vector3(
-                ((p) / (1 + e * Mathf.Cos(ni))) * Mathf.Cos(ni) * km2units,
+                (((p) / (1 + e * Mathf.Cos(ni))) * Mathf.Cos(ni) + e*a) * km2units,
                 ((p) / (1 + e * Mathf.Cos(ni))) * Mathf.Sin(ni) * km2units,
                 0);
         }
