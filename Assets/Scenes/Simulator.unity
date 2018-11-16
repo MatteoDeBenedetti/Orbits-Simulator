@@ -675,6 +675,26 @@ Prefab:
       propertyPath: SmaSlider
       value: 
       objectReference: {fileID: 1280189017}
+    - target: {fileID: 120570862729687174, guid: 4eb29cad067af244aa1b026fa94dc860,
+        type: 2}
+      propertyPath: m_Parameters.colorGradient.key1.r
+      value: 0.14901961
+      objectReference: {fileID: 0}
+    - target: {fileID: 120570862729687174, guid: 4eb29cad067af244aa1b026fa94dc860,
+        type: 2}
+      propertyPath: m_Parameters.colorGradient.key1.g
+      value: 0.16470589
+      objectReference: {fileID: 0}
+    - target: {fileID: 120570862729687174, guid: 4eb29cad067af244aa1b026fa94dc860,
+        type: 2}
+      propertyPath: m_Parameters.colorGradient.key1.b
+      value: 0.18823531
+      objectReference: {fileID: 0}
+    - target: {fileID: 120570862729687174, guid: 4eb29cad067af244aa1b026fa94dc860,
+        type: 2}
+      propertyPath: m_Parameters.colorGradient.atime1
+      value: 65535
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4eb29cad067af244aa1b026fa94dc860, type: 2}
   m_IsPrefabAsset: 0

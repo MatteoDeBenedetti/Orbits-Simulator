@@ -152,7 +152,7 @@ public class Spacecraft : MonoBehaviour
 
         for (int i = 0; i <= res; i++)
         {
-            ni = i * 2*Mathf.PI / res;
+            ni = (trueAnomaly - i * 2*Mathf.PI / res) % (2 * Mathf.PI);
             orbitPosArray[i] = new Vector3(
                 (((p) / (1 + e * Mathf.Cos(ni))) * Mathf.Cos(ni) + e*a) * km2units,
                 ((p) / (1 + e * Mathf.Cos(ni))) * Mathf.Sin(ni) * km2units,
