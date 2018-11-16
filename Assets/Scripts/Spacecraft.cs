@@ -61,13 +61,19 @@ public class Spacecraft : MonoBehaviour
 
     void Update()
     {
-        // update states
+        // update spacecraft states
         p = a * (1 - e * e);
         rPeriapsis = a * (1 - e);
         rApoapsis = a * (1 + e);
         UpdateTrueAnomaly();
         UpdateSpacecraftPos();
         UpdateOrbitTray();
+
+        // update primary position
+        primaryTransform.position = new Vector2(e * a * km2units, 0);
+
+        // align camera to primary pos
+
 
         // update GUI
         UIManagerRef.UpdateApoapsisText(rApoapsis - radiusEarth);
@@ -83,7 +89,7 @@ public class Spacecraft : MonoBehaviour
         rVect[0] = rScalar * Mathf.Cos(trueAnomaly);
         rVect[1] = rScalar * Mathf.Sin(trueAnomaly);
 
-        gameObject.transform.position = new Vector2(rVect[0] * km2units, rVect[1] * km2units);
+        transform.position = new Vector2(rVect[0] * km2units, rVect[1] * km2units);
     }
 
     private void UpdateTrueAnomaly()
