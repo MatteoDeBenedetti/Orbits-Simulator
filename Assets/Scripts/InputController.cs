@@ -30,7 +30,7 @@ public class InputController : MonoBehaviour
             mainCamera.orthographicSize = Mathf.Lerp(
                 mainCamera.orthographicSize, 
                 newCameraSize, 
-                zoomSmoothfactor * Time.deltaTime);
+                zoomSmoothfactor * Time.unscaledDeltaTime);
         }
     }
 }
