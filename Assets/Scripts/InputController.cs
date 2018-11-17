@@ -23,9 +23,10 @@ public class InputController : MonoBehaviour
         {
             newCameraSize =
                 mainCamera.orthographicSize - Input.mouseScrollDelta.y * scale;
+            newCameraSize = Mathf.Clamp(newCameraSize, 0f, 30f);
         }
 
-        if (Mathf.Abs(newCameraSize - mainCamera.orthographicSize) > 0.1)
+        if (Mathf.Abs(newCameraSize - mainCamera.orthographicSize) > 0.1f)
         { 
             mainCamera.orthographicSize = Mathf.Lerp(
                 mainCamera.orthographicSize, 
