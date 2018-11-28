@@ -9,6 +9,6 @@ Two Sliders in the bottom left of the screen allow the user to change Semi Major
 
 ![newtray](https://user-images.githubusercontent.com/41896432/48627981-58ec4900-e9b6-11e8-9229-9553b8afb5d5.png)
 
-# Future Features
+## Future Features
 * Maneuvers editor 
 
