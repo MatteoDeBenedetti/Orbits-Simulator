@@ -1,6 +1,6 @@
 ## Orbits Simulator
 
-The objective of this project is to create a 2D orbits simulator in Unity
+The objective of this project is to create a 2D orbits simulator in the Unity Game Engine
 
 It shows the spacecraft in orbit around a primary body (Earth) and a trace of its orbit.
 In the top right the user can select a time multiplier to speed up the time of the simulation up to 100x
